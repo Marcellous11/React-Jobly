@@ -1,0 +1,90 @@
+.MyNavbar {
+	position: relative;
+	background-color: rgb(66, 0, 86);
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+}
+
+.active {
+	/* color: rgb(16, 15, 15); */
+	background-color: rgb(98, 44, 114);
+	padding: 0 1rem;
+	border: 2rem;
+	border-radius: 2rem;
+}
+
+.MyNavbar-login-signup {
+	display: flex;
+}
+.MyNavbar-login-signup a {
+	color: rgb(245, 115, 77);
+	text-decoration: none;
+	padding: 01rem;
+	border-radius: 2rem;
+}
+
+.MyNavbar-forUser {
+	display: flex;
+	align-items: center;
+	float: left;
+}
+.MyNavbar-forUser a {
+	float: left;
+	color: rgb(245, 115, 77);
+	margin: 0 1rem;
+	padding: 0 1rem;
+	text-decoration: none;
+}
+
+.MyNavbar-forUser-Static a {
+	padding: 01rem;
+	border-radius: 2rem;
+}
+
+.MyNavbar-Nav-Dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.MyNavbar-Dropdown-Content {
+	/* change display to none */
+	display: none;
+	position: absolute;
+	background-color: rgb(66, 0, 86);
+	border-radius: 0rem 0rem 2rem 2rem;
+	height: 3rem;
+}
+#userID {
+	color: white;
+	font-weight: bold;
+	margin: 1rem 1rem;
+}
+
+.MyNavbar-Dropdown-Content ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	list-style: none;
+	width: 6rem;
+	height: 3rem;
+	padding: 0;
+	margin: 0;
+}
+
+#signout:hover {
+	color: red;
+	border-radius: 2rem;
+	display: inline-block;
+}
+.MyNavbar-Dropdown-Content ul li {
+	list-style: none;
+	padding: 0 1rem;
+	margin: 0rem;
+	white-space: nowrap;
+}
+.MyNavbar-Dropdown-Content ul li a {
+	margin: 0;
+}

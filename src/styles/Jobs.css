@@ -1,0 +1,25 @@
+.Jobs {
+	background-color: rgb(98, 44, 114);
+}
+.Jobs ul {
+	list-style: none;
+	text-align: left;
+	width: 50%;
+	margin: auto;
+}
+
+.Jobs ul li {
+	cursor: pointer;
+	background-color: rgb(66, 0, 86);
+	margin: 1rem 0;
+	padding: 1rem;
+	border-radius: 2rem;
+	transition: transform .3s;
+}
+.Jobs ul li:hover {
+	transform: scale(1.05);
+}
+.Jobs ul a {
+	color: rgb(245, 115, 77);
+	text-decoration: none;
+}

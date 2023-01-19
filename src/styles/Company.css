@@ -1,0 +1,54 @@
+html {
+	background-color: rgb(98, 44, 114);
+}
+.Company {
+	background-color: rgb(98, 44, 114);
+	height: 100%;
+}
+.Company-Content {
+	width: 50%;
+	margin: auto;
+	color: rgb(245, 115, 77);
+}
+h2 {
+	font-size: 3.5rem;
+}
+h3 {
+	font-weight: bold;
+}
+.Company-Content-RelatedJobs ul li {
+	list-style: none;
+	color: rgb(245, 115, 77);
+	text-decoration: none;
+	cursor: pointer;
+	background-color: rgb(66, 0, 86);
+	margin: 1rem 0;
+	padding: 1rem;
+	border-radius: 2rem;
+	transition: transform .3s;
+}
+.Company-Content-RelatedJobs ul a {
+	list-style: none;
+	color: rgb(245, 115, 77);
+	text-decoration: none;
+}
+
+.Company ul li:hover {
+	transform: scale(1.05);
+}
+
+.Company-returnBtn {
+	position: absolute;
+	z-index: 2;
+	top: 16rem;
+	display: flex;
+	text-decoration: none;
+	color: rgb(245, 115, 77);
+	border-radius: 2rem;
+	padding: 1rem;
+	/* background-color: rgb(102, 69, 155); */
+}
+.Company-returnBtn:hover {
+	background-color: rgb(245, 147, 113);
+	color: rgb(102, 69, 155);
+}

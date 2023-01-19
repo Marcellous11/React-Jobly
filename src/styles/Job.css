@@ -1,0 +1,55 @@
+.Job {
+	background-color: rgb(98, 44, 114);
+	height: 100%;
+}
+.Job-Content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	margin: auto;
+	color: rgb(245, 115, 77);
+}
+.Company-Content-Apply button {
+	border: 0;
+	padding: .5rem 1rem;
+	border-radius: 2rem;
+	background-color: rgb(245, 115, 77);
+	color: rgb(98, 44, 114);
+	transition: trasform .5s;
+}
+.Company-Content-Apply button:hover {
+	background-color: rgb(245, 147, 113);
+	transform: scale(1.05);
+}
+h2 {
+	font-size: 3.5rem;
+}
+h3 {
+	font-weight: bold;
+}
+.Job-Content-Company a {
+	color: rgb(245, 115, 77);
+	text-decoration: none;
+}
+
+.Company ul li:hover {
+	transform: scale(1.05);
+}
+
+.Job-returnBtns {
+	position: relative;
+	z-index: 2;
+	top: 5rem;
+	display: flex;
+	text-decoration: none;
+	color: rgb(245, 115, 77);
+	border-radius: 2rem;
+	padding: 1rem;
+	width: 20%;
+	/* background-color: rgb(102, 69, 155); */
+}
+.Job-returnBtns:hover {
+	background-color: rgb(245, 147, 113);
+	color: rgb(102, 69, 155);
+}

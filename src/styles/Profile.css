@@ -1,0 +1,18 @@
+.Profile {
+	width: 50%;
+	margin: auto;
+	color: white;
+}
+.Profile a {
+	color: rgb(245, 147, 113);
+	border: 0;
+	/* background-color: rgb(196, 142, 209); */
+	padding: .5rem 1rem;
+	border-radius: 1rem;
+	transform: scale(1.1);
+	text-decoration: none;
+}
+.Profile a:hover {
+	color: rgb(66, 0, 86);
+	background-color: rgb(245, 147, 113);
+}
