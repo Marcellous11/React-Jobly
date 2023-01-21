@@ -15,10 +15,10 @@ const EditProfile = () => {
 			if (!currUser.username) {
 				navigate('/login');
 			}
-			// console.log(currUser);
+
 			const getUserData = async () => {
 				const user = await JoblyApi.getUserInfo(currUser.username, currUser.token);
-				// console.debug(user);
+
 				setUserData(user.user);
 				return user;
 			};
@@ -26,9 +26,7 @@ const EditProfile = () => {
 		},
 		[ currUser ]
 	);
-	// console.log('userData ---->', userData);
-	// console.debug('currUser---->', currUser);
-	const { register, watch, handleSubmit, formState: { errors } } = useForm();
+	const { register, handleSubmit, formState: { errors } } = useForm();
 	const onSubmit = async (data) => {
 		await JoblyApi.editUser(currUser.username, data, localStorage.token);
 		navigate('/profile');

@@ -36,7 +36,6 @@ const Job = ({ jobs }) => {
 			try {
 				const res = await JoblyApi.applyToJob(currUser.username, job.id, currUser.token);
 				setApplied(true);
-				console.debug(res);
 			} catch (e) {
 				console.debug(e);
 			}

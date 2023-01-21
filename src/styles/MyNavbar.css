@@ -6,15 +6,12 @@
 	display: flex;
 	justify-content: center;
 }
-
 .active {
-	/* color: rgb(16, 15, 15); */
 	background-color: rgb(98, 44, 114);
 	padding: 0 1rem;
 	border: 2rem;
 	border-radius: 2rem;
 }
-
 .MyNavbar-login-signup {
 	display: flex;
 }
@@ -24,7 +21,6 @@
 	padding: 01rem;
 	border-radius: 2rem;
 }
-
 .MyNavbar-forUser {
 	display: flex;
 	align-items: center;
@@ -49,7 +45,6 @@
 }
 
 .MyNavbar-Dropdown-Content {
-	/* change display to none */
 	display: none;
 	position: absolute;
 	background-color: rgb(66, 0, 86);
@@ -73,7 +68,6 @@
 	padding: 0;
 	margin: 0;
 }
-
 #signout:hover {
 	color: red;
 	border-radius: 2rem;

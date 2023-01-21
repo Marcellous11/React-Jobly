@@ -28,7 +28,6 @@ const Signup = () => {
 	const onSubmit = (data) => {
 		if (password === confirmPassword) {
 			delete data.confirmPassword;
-			// console.log(errors);
 			signup(data);
 			navigate('/login');
 		} else {
@@ -60,7 +59,6 @@ const Signup = () => {
 						{...register('password', { required: true, minLength: 6 })}
 					/>
 					<input
-						// minlength="6"
 						placeholder="Confirm Password"
 						type="password"
 						{...register('confirmPassword', { required: true })}

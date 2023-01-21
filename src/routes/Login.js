@@ -51,7 +51,6 @@ const Login = () => {
 			<div id="loginBox" className="Onboard-Content ">
 				<h2>Login</h2>
 				<form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
-					{/* register your input into the hook by invoking the "register" function */}
 					{errors.username && <label htmlFor="lgusername">Must Enter Username</label>}
 					<input
 						id="lgusername"

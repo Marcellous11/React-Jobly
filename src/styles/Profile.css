@@ -40,14 +40,12 @@
 .Profile-Info p {
 	font-size: 1.2rem;
 	color: rgb(245, 115, 77);
-	/* text-decoration: underline; */
 }
 .Profile-Info p b {
 	font-size: 1.2rem;
 	text-decoration: none;
 	color: white;
 }
-
 .Profile-Applications h3 {
 	color: rgb(245, 115, 77);
 	font-size: 1.5rem;

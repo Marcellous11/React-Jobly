@@ -15,23 +15,19 @@ html {
 .Company-Content {
 	width: 50%;
 	margin: auto;
-	/* color: rgb(245, 115, 77); */
 }
 .Company-Content-Discription h3 {
-	/* width: 50%; */
 	margin: auto;
 
 	color: rgb(245, 115, 77);
 }
 .Company-Content-Discription p {
-	/* width: 50%; */
 	margin: auto;
 	margin-top: .5rem;
 	color: rgb(245, 147, 113);
 }
 .Company h2 {
 	font-size: 2.5rem;
-
 	color: rgb(245, 115, 77);
 }
 .Company h2 b {
@@ -57,17 +53,14 @@ html {
 	border-radius: 2rem;
 	transition: transform .3s;
 }
-
 .Company-Content-RelatedJobs ul a {
 	list-style: none;
 	color: rgb(245, 115, 77);
 	text-decoration: none;
 }
-
 .Company ul li:hover {
 	transform: scale(1.05);
 }
-
 .Company-returnBtn {
 	position: absolute;
 	z-index: 2;
@@ -77,7 +70,6 @@ html {
 	color: rgb(245, 115, 77);
 	border-radius: 2rem;
 	padding: 1rem;
-	/* background-color: rgb(102, 69, 155); */
 }
 .Company-returnBtn:hover {
 	background-color: rgb(245, 147, 113);

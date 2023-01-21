@@ -44,11 +44,9 @@
 	text-decoration: none;
 }
 .Job-Content-Company a {
-	/* background-color: rgb(245, 147, 113); */
 	text-decoration: none;
 	color: rgb(245, 147, 113);
 }
-
 .Company ul li:hover {
 	transform: scale(1.05);
 }
@@ -58,7 +56,6 @@
 	align-items: center;
 	width: 100%;
 }
-
 .Job-returnBtns {
 	position: relative;
 	z-index: 2;
@@ -69,7 +66,6 @@
 	border-radius: 2rem;
 	padding: 1rem;
 	width: 20%;
-	/* background-color: rgb(102, 69, 155); */
 }
 .Job-returnBtns:hover {
 	background-color: rgb(245, 147, 113);

@@ -22,13 +22,10 @@
 	align-items: center;
 	padding-bottom: 1.5rem;
 }
-
 .EditProfile-btns {
-	/* position: absolute; */
 	color: rgb(245, 147, 113);
 	border: 0;
 	text-decoration: none;
-
 	padding: .5rem 1rem;
 	border-radius: 1rem;
 	transform: scale(1.1);
@@ -55,10 +52,8 @@
 }
 .EditProfile-changeP {
 	color: rgb(245, 147, 113);
-
 	text-decoration: none;
 	padding-top: .5rem;
-	/* border-radius: 1rem; */
 	transition: color .5s;
 }
 .EditProfile-changeP:hover {

@@ -23,7 +23,6 @@ const Companies = ({ companies }) => {
 			<h2>Companies</h2>
 			<ul>
 				{companies.map((company) => {
-					// console.log(company);
 					return (
 						<NavLink key={uuid()} to={`/companies/${company.handle}`}>
 							<li>{company.name}</li>

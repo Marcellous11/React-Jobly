@@ -17,7 +17,6 @@
 }
 .Onboard-Content {
 	background-color: rgb(66, 0, 86);
-	/* padding: 3rem; */
 	border-radius: 2rem;
 	width: 30%;
 	height: 58%;
@@ -25,7 +24,6 @@
 }
 #loginBox {
 	background-color: rgb(66, 0, 86);
-	/* padding: 3rem; */
 	border-radius: 2rem;
 	width: 30%;
 	height: 40%;
@@ -43,17 +41,13 @@
 	padding-top: 2rem;
 	text-align: center;
 	font-size: 3rem;
-	/* margin-bottom: 6rem; */
 }
-
 .loginForm {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	margin-bottom: 1rem;
 }
-
 input[type=submit] {
 	color: rgb(255, 255, 255);
 	border: 0;
@@ -71,7 +65,6 @@ input[type=submit]:hover {
 	border-radius: 1rem;
 	transform: scale(1.1);
 }
-
 .Onboard p {
 	color: rgb(245, 147, 113);
 	text-align: center;
