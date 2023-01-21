@@ -5,20 +5,50 @@ html {
 	background-color: rgb(98, 44, 114);
 	height: 100%;
 }
+.Company h2 {
+	margin-top: 0;
+	padding-top: 2rem;
+	text-align: center;
+	color: rgb(245, 113, 77);
+	font-size: 3rem;
+}
 .Company-Content {
 	width: 50%;
 	margin: auto;
+	/* color: rgb(245, 115, 77); */
+}
+.Company-Content-Discription h3 {
+	/* width: 50%; */
+	margin: auto;
+
 	color: rgb(245, 115, 77);
 }
-h2 {
-	font-size: 3.5rem;
+.Company-Content-Discription p {
+	/* width: 50%; */
+	margin: auto;
+	margin-top: .5rem;
+	color: rgb(245, 147, 113);
 }
-h3 {
-	font-weight: bold;
+.Company h2 {
+	font-size: 2.5rem;
+
+	color: rgb(245, 115, 77);
+}
+.Company h2 b {
+	color: rgb(245, 147, 113);
+}
+.Company-Content-Emp h3 {
+	color: rgb(245, 115, 77);
+}
+.Company-Content-Emp h3 b {
+	color: rgb(245, 147, 113);
+}
+.Company-Content-RelatedJobs h3 {
+	color: rgb(245, 115, 77);
 }
 .Company-Content-RelatedJobs ul li {
 	list-style: none;
-	color: rgb(245, 115, 77);
+	color: rgb(245, 147, 113);
 	text-decoration: none;
 	cursor: pointer;
 	background-color: rgb(66, 0, 86);
@@ -27,6 +57,7 @@ h3 {
 	border-radius: 2rem;
 	transition: transform .3s;
 }
+
 .Company-Content-RelatedJobs ul a {
 	list-style: none;
 	color: rgb(245, 115, 77);

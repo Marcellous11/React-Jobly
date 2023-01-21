@@ -9,7 +9,7 @@ import JoblyApi from './api';
 function App() {
 	const defaultCurrUser = {
 		username: localStorage.getItem('username'),
-		token: localStorage.getItem('password')
+		token: localStorage.getItem('token')
 	};
 	const [ currUser, setCurrUser ] = useState(defaultCurrUser);
 

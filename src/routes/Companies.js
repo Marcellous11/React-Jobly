@@ -11,7 +11,7 @@ const Companies = ({ companies }) => {
 
 	useEffect(
 		() => {
-			if (!currUser.username && !currUser.token) {
+			if (!currUser.username) {
 				navigate('/login');
 			}
 		},
@@ -25,8 +25,8 @@ const Companies = ({ companies }) => {
 				{companies.map((company) => {
 					// console.log(company);
 					return (
-						<NavLink to={`/companies/${company.handle}`}>
-							<li key={uuid()}>{company.name}</li>
+						<NavLink key={uuid()} to={`/companies/${company.handle}`}>
+							<li>{company.name}</li>
 						</NavLink>
 					);
 				})}

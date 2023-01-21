@@ -9,7 +9,7 @@ const Jobs = ({ jobs }) => {
 	const navigate = useNavigate();
 	useEffect(
 		() => {
-			if (!currUser.username && !currUser.token) {
+			if (!currUser.username) {
 				navigate('/login');
 			}
 		},
@@ -22,8 +22,8 @@ const Jobs = ({ jobs }) => {
 			<ul>
 				{jobs.map((job) => {
 					return (
-						<NavLink to={`/jobs/${job.id}`}>
-							<li key={uuid()}>{job.title}</li>
+						<NavLink key={uuid()} to={`/jobs/${job.id}`}>
+							<li>{job.title}</li>
 						</NavLink>
 					);
 				})}

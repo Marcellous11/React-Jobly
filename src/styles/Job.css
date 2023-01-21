@@ -5,10 +5,14 @@
 .Job-Content {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	width: 50%;
 	margin: auto;
+	padding: 0.5rem;
+	border-radius: 2rem;
 	color: rgb(245, 115, 77);
+	background-color: rgb(66, 0, 86);
+	box-shadow: rgba(149, 157, 165, 0.423) 0px 8px 24px;
 }
 .Company-Content-Apply button {
 	border: 0;
@@ -22,19 +26,37 @@
 	background-color: rgb(245, 147, 113);
 	transform: scale(1.05);
 }
-h2 {
-	font-size: 3.5rem;
+.Job h2 {
+	margin-top: 0;
+	padding-top: 2rem;
+	text-align: center;
+	color: rgb(245, 113, 77);
+	font-size: 3rem;
 }
-h3 {
+.Job b {
+	color: rgb(245, 147, 113);
+}
+.Job-Content h3 {
 	font-weight: bold;
 }
-.Job-Content-Company a {
+.Job-Content-Company h3 {
 	color: rgb(245, 115, 77);
 	text-decoration: none;
+}
+.Job-Content-Company a {
+	/* background-color: rgb(245, 147, 113); */
+	text-decoration: none;
+	color: rgb(245, 147, 113);
 }
 
 .Company ul li:hover {
 	transform: scale(1.05);
+}
+.Company-Content-Apply {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 }
 
 .Job-returnBtns {

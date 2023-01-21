@@ -12,7 +12,6 @@ const Home = () => {
 		const getquote = async () => {
 			try {
 				const result = await axios.get(' https://api.goprogram.ai/inspiration');
-				console.log(result.data);
 				setQuote(result.data);
 			} catch (e) {
 				console.log(e.messsage);
@@ -23,14 +22,12 @@ const Home = () => {
 
 	useEffect(
 		() => {
-			if (!currUser.username && !currUser.token) {
+			if (!currUser.username) {
 				navigate('/login');
 			}
 		},
 		[ currUser ]
 	);
-
-	console.debug('state current user-->', currUser);
 	return (
 		<div className="Home">
 			<h2>Welcome to your new life</h2>

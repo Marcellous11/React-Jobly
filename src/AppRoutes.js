@@ -11,6 +11,7 @@ import Signup from './routes/Signup';
 import Home from './routes/Home';
 import Sorry from './routes/Sorry.js';
 import EditProfile from './routes/EditProfile.js';
+import ChangePassword from './routes/ChangePassword.js';
 
 const AppRoutes = () => {
 	const [ companies, setCopanies ] = useState([]);
@@ -38,6 +39,7 @@ const AppRoutes = () => {
 			<Route exact path="/jobs/:id" element={<Job jobs={jobs} />} />
 			<Route exact path="/profile" element={<Profile />} />
 			<Route exact path="/profile/:username/edit" element={<EditProfile />} />
+			<Route exact path="/profile/:username/edit/changepassword" element={<ChangePassword />} />
 			<Route exact path="/signup" element={<Signup />} />
 			<Route exact path="/login" element={<Login />} />
 			<Route path="/*" element={<Sorry />} />

@@ -31,17 +31,21 @@ const Company = ({ companies, jobs }) => {
 
 		return (
 			<div className="Company">
-				<h2>{comp.name}</h2>
+				<h2>
+					Company : <b>{comp.name}</b>{' '}
+				</h2>
 				<div className="Company-Content">
 					<div className="Company-Content-Discription">
 						<h3> Discription</h3>
 						<p>{comp.description}</p>
 					</div>
 					<div className="Company-Content-Emp">
-						<h3>Number of Employees: {comp.numEmployees}</h3>
+						<h3>
+							Number of Employees: <b>{comp.numEmployees}</b>
+						</h3>
 					</div>
 					<div className="Company-Content-RelatedJobs">
-						<h3>Job Titles</h3>
+						<h3>Available Jobs: </h3>
 						<ul>
 							{rjs.map((job) => (
 								<Link to={`/jobs/${job.id}`}>

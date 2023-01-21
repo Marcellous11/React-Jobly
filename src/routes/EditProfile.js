@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Context from '../Context';
@@ -7,49 +7,64 @@ import '../styles/EditProfile.css';
 
 const EditProfile = () => {
 	const { currUser } = useContext(Context);
+	const [ userData, setUserData ] = useState(userData);
 	const navigate = useNavigate();
 	useEffect(
 		() => {
-			if (!currUser.username && !currUser.token) {
+			console.debug('before effect currUser---->', currUser);
+			if (!currUser.username) {
 				navigate('/login');
 			}
-			// const getUserData = async () => {
-			// 	const user = await JoblyApi.getUserInfo(currUser.username, currUser.token);
-			// 	console.debug(user);
-			// 	return user;
-			// };
-			// getUserData();
+			// console.log(currUser);
+			const getUserData = async () => {
+				const user = await JoblyApi.getUserInfo(currUser.username, currUser.token);
+				// console.debug(user);
+				setUserData(user.user);
+				return user;
+			};
+			getUserData();
 		},
 		[ currUser ]
 	);
-
-	const { register, handleSubmit, formState: { errors } } = useForm();
-	const onSubmit = (data) => {
-		navigate('/login');
+	// console.log('userData ---->', userData);
+	// console.debug('currUser---->', currUser);
+	const { register, watch, handleSubmit, formState: { errors } } = useForm();
+	const onSubmit = async (data) => {
+		await JoblyApi.editUser(currUser.username, data, localStorage.token);
+		navigate('/profile');
 	};
-	return (
-		<div className="EditProfile">
-			<div className="EditProfile-Content">
-				<h2>Edit Profile</h2>
-				<form onSubmit={handleSubmit(onSubmit)}>
-					{/* register your input into the hook by invoking the "register" function */}
-					<input placeholder="User Name" {...register('username', { required: true })} />
-					<input placeholder="First Name" {...register('firstName', { required: true })} />
-					<input placeholder="Last Name" {...register('lastName', { required: true })} />
-					<input placeholder="Password" type="password" {...register('password', { required: true })} />
-					<input placeholder="Email" type="email" {...register('email', { required: true })} />
-					{/* errors will return when field validation fails  */}
-					{errors.lastName && <span>This field is required</span>}
 
-					<input type="submit" />
-				</form>
+	if (userData) {
+		return (
+			<div className="EditProfile">
+				<div className="EditProfile-Content">
+					<h2>Edit Profile</h2>
+					<form onSubmit={handleSubmit(onSubmit)}>
+						<input defaultValue={userData.firstName} {...register('firstName')} />
+						<input defaultValue={userData.lastName} {...register('lastName')} />
+
+						<input defaultValue={userData.email} type="email" {...register('email')} />
+						<Link
+							className="EditProfile-changeP"
+							to={`/profile/${currUser.username}/edit/changepassword`}
+							type="button"
+						>
+							Change Password
+						</Link>
+
+						{errors.lastName && <span>This field is required</span>}
+
+						<input type="submit" />
+					</form>
+				</div>
+				<Link className="EditProfile-btns" to={`/profile`}>
+					{' '}
+					Cancel
+				</Link>
 			</div>
-			<Link className="EditProfile-btns" to={`/profile`}>
-				{' '}
-				Canel
-			</Link>
-		</div>
-	);
+		);
+	}
+	return <div>Loading</div>;
 };
 
 export default EditProfile;

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import Context from '../Context';
@@ -7,31 +7,69 @@ import '../styles/Onboard.css';
 const Signup = () => {
 	const navigate = useNavigate();
 	const { signup } = useContext(Context);
-	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+	const {
+		register,
+		unregister,
+		getValues,
+		handleSubmit,
+		watch,
+		setError,
+		setFocus,
+		formState: { errors }
+	} = useForm();
+
+	useEffect(
+		() => {
+			setFocus('username');
+		},
+		[ setFocus ]
+	);
+
 	const onSubmit = (data) => {
-		signup(data);
-		navigate('/login');
+		if (password === confirmPassword) {
+			delete data.confirmPassword;
+			// console.log(errors);
+			signup(data);
+			navigate('/login');
+		} else {
+			console.debug('passwords didnt match');
+		}
 	};
-
-	console.log(watch()); // watch input value by passing the name of it
-	// console.log(watch('lastName')); // watch input value by passing the name of it
-	console.log(errors);
-
+	const [ password, confirmPassword ] = watch([ 'password', 'confirmPassword' ]);
+	console.debug(errors);
+	console.debug(errors.password);
 	return (
 		<div className="Onboard">
 			<div className="Onboard-Content">
 				<h2>Signup</h2>
 				<form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
-					{/* register your input into the hook by invoking the "register" function */}
-					<input placeholder="User Name" {...register('username', { required: true })} />
-					<input placeholder="First Name" {...register('firstName', { required: true })} />
-					<input placeholder="Last Name" {...register('lastName', { required: true })} />
-					<input placeholder="Password" type="password" {...register('password', { required: true })} />
-					<input placeholder="Email" type="email" {...register('email', { required: true })} />
-					{/* errors will return when field validation fails  */}
-					{errors.lastName && <span>This field is required</span>}
+					{errors.username && <label htmlFor="username">Username is required</label>}
+					<input id="username" placeholder="User Name" {...register('username', { required: true })} />
 
+					{errors.firstName && <label htmlFor="firsName">First Name is required</label>}
+					<input id="firstName" placeholder="First Name" {...register('firstName', { required: true })} />
+
+					{errors.lastName && <label htmlFor="lastName">Last Name is required</label>}
+					<input id="lastName" placeholder="Last Name" {...register('lastName', { required: true })} />
+
+					{errors.password && <label htmlFor="password">password is required</label>}
+					<input
+						id="password"
+						placeholder="Password"
+						type="password"
+						{...register('password', { required: true, minLength: 6 })}
+					/>
+					<input
+						// minlength="6"
+						placeholder="Confirm Password"
+						type="password"
+						{...register('confirmPassword', { required: true })}
+					/>
+					{errors.email && <label htmlFor="email">email is required</label>}
+					<input id="email" placeholder="Email" type="email" {...register('email', { required: true })} />
 					<input type="submit" />
+					{password === confirmPassword ? null : <p>Passwords does NOT match </p>}
+					{errors.password && <p>Password must be at least 6 charaters </p>}
 				</form>
 			</div>
 		</div>
@@ -39,25 +77,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-// //{
-//	"username": "Mac",
-//	"firstName": "Marcellous",
-//	"lastName": "Curtis",
-//	"password":"123password",
-//	"email":"1234@gmail.com"
-//}
-
-//token recieved from signup
-//"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1hYyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NzQwMjA5MzZ9.Cd4W5Vojdn-vvKvkUvXwgpEoiIVZGsElB4xtjM6r0oQ"
-//{
-//"username":"Mac",
-//"password":"123password"
-//}
-//
-//{sign up
-//"_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1hYyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NzQwMjA5MzZ9.Cd4W5Vojdn-vvKvkUvXwgpEoiIVZGsElB4xtjM6r0oQ"
-//}
-
-//login
-// "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1hYyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NzQwMjIyNjZ9.ZZAn0CGaH9sR7HGwAWuDr_UxOVulQp-IlI8Msxu7K1Q"

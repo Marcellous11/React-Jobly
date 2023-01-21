@@ -40,7 +40,7 @@ const MyNavbar = () => {
 							<div className="MyNavbar-Dropdown-Content">
 								<ul>
 									<li>
-										<NavLink to="/profile">ProFile</NavLink>
+										<NavLink to="/profile">Profile</NavLink>
 									</li>
 									<li>
 										<NavLink id="signout" onClick={signout} to="/login">

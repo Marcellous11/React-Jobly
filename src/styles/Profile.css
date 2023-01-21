@@ -3,11 +3,22 @@
 	margin: auto;
 	color: white;
 }
+.Profile h2 {
+	margin-top: 0;
+	padding-top: 2rem;
+	text-align: center;
+	color: rgb(245, 113, 77);
+	font-size: 3rem;
+}
+.Profile {
+	width: 50%;
+	margin: auto;
+	color: white;
+}
 .Profile a {
 	color: rgb(245, 147, 113);
 	border: 0;
-	/* background-color: rgb(196, 142, 209); */
-	padding: .5rem 1rem;
+	padding: .5rem 0;
 	border-radius: 1rem;
 	transform: scale(1.1);
 	text-decoration: none;
@@ -15,4 +26,43 @@
 .Profile a:hover {
 	color: rgb(66, 0, 86);
 	background-color: rgb(245, 147, 113);
+}
+.Profile-Info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: 2rem;
+	padding: .5rem;
+	border-radius: 2rem;
+	background-color: rgb(66, 0, 86);
+	box-shadow: rgba(149, 157, 165, 0.423) 0px 8px 24px;
+}
+.Profile-Info p {
+	font-size: 1.2rem;
+	color: rgb(245, 115, 77);
+	/* text-decoration: underline; */
+}
+.Profile-Info p b {
+	font-size: 1.2rem;
+	text-decoration: none;
+	color: white;
+}
+
+.Profile-Applications h3 {
+	color: rgb(245, 115, 77);
+	font-size: 1.5rem;
+}
+.Profile-Applications li {
+	color: rgb(245, 115, 77);
+	background-color: rgb(66, 0, 86);
+	list-style: none;
+	margin: .4rem 0;
+	padding: .5rem 1rem;
+	font-size: 1.3rem;
+	border-radius: 2rem;
+}
+.editBtn {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }

@@ -6,22 +6,52 @@
 	justify-content: center;
 	height: 100vh;
 }
+.Onboard h1 {
+	color: rgb(245, 113, 77);
+	font-size: 4rem;
+	margin-top: 0rem;
+	text-align: center;
+}
+.Onboard h1 b {
+	color: rgb(245, 147, 113);
+}
 .Onboard-Content {
 	background-color: rgb(66, 0, 86);
 	/* padding: 3rem; */
 	border-radius: 2rem;
-	width: 40%;
-	height: 45%;
+	width: 30%;
+	height: 58%;
 	box-shadow: rgba(149, 157, 165, 0.423) 0px 8px 24px;
 }
-h2 {
+#loginBox {
+	background-color: rgb(66, 0, 86);
+	/* padding: 3rem; */
+	border-radius: 2rem;
+	width: 30%;
+	height: 40%;
+	box-shadow: rgba(149, 157, 165, 0.423) 0px 8px 24px;
+	margin-bottom: 6rem;
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+.Onboard-Content h2 {
 	color: rgb(245, 113, 77);
+	font-size: 3rem;
+	margin-top: 0;
+	padding-top: 2rem;
+	text-align: center;
+	font-size: 3rem;
+	/* margin-bottom: 6rem; */
 }
 
 .loginForm {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	margin-bottom: 1rem;
 }
 
 input[type=submit] {
@@ -40,4 +70,31 @@ input[type=submit]:hover {
 	padding: .5rem 1rem;
 	border-radius: 1rem;
 	transform: scale(1.1);
+}
+
+.Onboard p {
+	color: rgb(245, 147, 113);
+	text-align: center;
+	width: 100%;
+	margin: 0;
+	margin-left: 1rem;
+}
+.Onboard-Content label {
+	color: rgb(245, 147, 113);
+}
+.Onboard-Content span {
+	margin-top: 1rem;
+	color: rgb(245, 113, 77);
+	cursor: pointer;
+	text-decoration: none;
+}
+.Onboard-Content span b {
+	margin-top: 1rem;
+	color: rgb(245, 147, 113);
+	text-decoration: none;
+}
+.Onboard-Content span b:hover {
+	margin-top: 1rem;
+	color: rgb(245, 170, 145);
+	text-decoration: none;
 }

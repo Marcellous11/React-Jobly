@@ -1,6 +1,13 @@
 .Jobs {
 	background-color: rgb(98, 44, 114);
 }
+.Jobs h2 {
+	margin-top: 0;
+	padding-top: 2rem;
+	text-align: center;
+	color: rgb(245, 113, 77);
+	font-size: 3rem;
+}
 .Jobs ul {
 	list-style: none;
 	text-align: left;

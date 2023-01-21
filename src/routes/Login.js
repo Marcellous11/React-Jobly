@@ -1,19 +1,24 @@
 import React, { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Context from '../Context';
 import '../styles/Onboard.css';
 
 const Login = () => {
 	const navigate = useNavigate();
 	const { setCurrUser, login, setLocalStorage } = useContext(Context);
-	const { register, handleSubmit, formState: { errors } } = useForm();
+	const { register, handleSubmit, setFocus, formState: { errors } } = useForm();
 
-	useEffect(() => {
-		let localData = { username: localStorage.getItem('username'), token: localStorage.getItem('token') };
-		setCurrUser(localData);
-		if (localData.username) navigate('/');
-	}, []);
+	//!Fix this
+	useEffect(
+		() => {
+			let localData = { username: localStorage.getItem('username'), token: localStorage.getItem('token') };
+			setCurrUser(localData);
+			if (localData.username) navigate('/');
+			setFocus('username');
+		},
+		[ setFocus ]
+	);
 
 	const onSubmit = async (data) => {
 		try {
@@ -22,6 +27,7 @@ const Login = () => {
 				token: await login(data)
 			};
 			// console.debug('setup token', setup.token);
+			console.log(setup);
 			setLocalStorage(setup);
 		} catch (e) {
 			e.map((err) => {
@@ -37,21 +43,39 @@ const Login = () => {
 
 	return (
 		<div className="Onboard">
-			<div className="Onboard-Content">
+			<h1>
+				{' '}
+				Welcome to <b>Jobly! </b>
+			</h1>
+
+			<div id="loginBox" className="Onboard-Content ">
 				<h2>Login</h2>
 				<form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
 					{/* register your input into the hook by invoking the "register" function */}
-					<input autoComplete="off" placeholder="User Name" {...register('username', { required: true })} />
+					{errors.username && <label htmlFor="lgusername">Must Enter Username</label>}
+					<input
+						id="lgusername"
+						autoComplete="off"
+						placeholder="User Name"
+						{...register('username', { required: true })}
+					/>
+					{errors.username && <label htmlFor="lgpassword">Must Enter Username</label>}
+					<input
+						id="lgpassword"
+						placeholder="Password"
+						type="password"
+						{...register('password', { required: true })}
+					/>
 
-					<input placeholder="Password" type="password" {...register('password', { required: true })} />
-
-					{/* errors will return when field validation fails  */}
-					{errors.username && <span>Must Enter Username</span>}
-					{errors.password && <span>Must Enter Password</span>}
-
-					<br />
 					<input type="submit" />
 				</form>
+				<span>
+					Don't have an account?{' '}
+					<Link to="/signup">
+						<b>Sign up now!</b>
+					</Link>{' '}
+					{' '}
+				</span>
 			</div>
 		</div>
 	);
